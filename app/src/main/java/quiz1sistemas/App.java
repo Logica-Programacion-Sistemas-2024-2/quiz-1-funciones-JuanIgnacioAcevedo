@@ -107,6 +107,14 @@ public class App {
                 return -1;
             }
     }
+    public static int  calcularValorFactura (int calcularDescuentoCombo , int calcularValorBoleta , int calcularValorNetoCombo ){
+        try {
+            int factura = calcularDescuentoCombo + calcularValorBoleta + calcularValorNetoCombo;
+            return factura;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
     
     public static void main(String[] args) {
         Scanner en = new Scanner(System.in);
@@ -114,6 +122,7 @@ public class App {
             byte NumeroCombo = 0 ;
             String Boleta = "";
             short NumeroBoletas = 0 , UCombos = 0 ;
+            int valor1 , valor2, valor3 , valor4 ;
             
             System.out.println("INGRESA TIPO DE BOLETA QUIERES COMPRAR ? ");
             System.out.println("G: General  Valor $ 10.000");
@@ -131,6 +140,10 @@ public class App {
 
             System.out.println("CUANTOS COMBOS ?");
             UCombos = en.nextShort();
+
+            valor1 = calcularValorBoleta(Boleta, NumeroBoletas);
+            valor2 = calcularValorNetoCombo(NumeroCombo, UCombos);
+          
 
 
           
